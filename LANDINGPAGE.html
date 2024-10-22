@@ -7,171 +7,407 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title> Landing Page</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #211e39;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0px auto;
+            background-color: #b9d91b;
+            height: 30px;
+        }
+
+        header .nav-left p {
+            color: #ff0303;
+            padding-left: 60px;
+            font-size: 20px;
+        }
+
+        header .nav-right {
+            display: flex;
+        }
+
+        header .nav-right ul a {
+            padding: 10px;
+            margin: 10px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .container {
+            position: relative;
+            max-width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px auto;
+        }
+
+        .container .left-section {
+            position: relative;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .container .left-section h1 {
+            color: #ff0000;
+            font-size: 2.5em;
+            line-height: 1.4em;
+            letter-spacing: 2px;
+            padding-top: 2px;
+        }
+
+        .container .left-section h1 .pink {
+            color: #6d6d6d;
+            font-family: 'Viga', serif;
+        }
+
+        .container .left-section p {
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .container .left-section a {
+            display: inline-block;
+            background: #000000;
+            padding: 12px 18px 12px 18px;
+            text-decoration: none;
+            border-radius: 25px;
+            color: white;
+            margin-top: 15px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .container .right-section {
+            text-align: center;
+            margin-top: 60px;
+            max-width: 600px;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50px;
+            margin-top: 50px;
+        }
+
+        .container .right-section img {
+            max-width: 300px;
+            padding-left: 35%;
+        }
+
+        .container .right-section .right-box {
+            position: absolute;
+            display: grid;
+            right: 0%;
+            bottom: 0%;
+        }
+
+        .container .right-section .right-box img {
+            width: 40px;
+            margin: 10px;
+        }
+
+        .bottom {
+            display: flex;
+            margin-top: -10px;
+            justify-content: center;
+        }
+
+        .bottom a:hover {
+            margin-top: -20px;
+            transition: 0.2s;
+        }
+
+        .bottom img {
+            width: 54px;
+            height: 80px;
+            margin: 20px;
+        }
+
+        .about {
+            background-color: #a41919;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .about h1 {
+            text-align: center;
+            padding-top: 10px;
+            background-color: #837070;
+            border-radius: 20px;
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .about-section .left-side img {
+            padding-top: 20px;
+            border-radius: 50%;
+        }
+
+        .about-section .right-side {
+            font-size: 20px;
+            padding-left: 25px;
+        }
+
+        .about-section .right-side a {
+            display: inline-block;
+            background: #c0b2b2;
+            padding: 12px 18px 12px 18px;
+            text-decoration: none;
+            border-radius: 25px;
+            color: #000;
+            margin-top: 15px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .services {
+            padding-top: -50px;
+            position: relative;
+            background-color: #0a2535;
+            padding: 20px;
+        }
+
+        .services h1 {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 20px;
+        }
+
+        .service-section {
+            background-color: #70140f;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            margin: 10px;
+            align-items: center;
+        }
+
+        .service-section img {
+            padding-top: 10px;
+            height: 200px;
+            width: 200px;
+        }
+
+        .our-products {
+            background-color: #3f0627;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .our-products h1 {
+            background-color: #fff;
+            border-radius: 20px;
+        }
+
+        .product-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 15px;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            width: 250px;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: 100px;
+            border-radius: 5px;
+        }
+
+        .price {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .discounted-price {
+            color: #ff3300;
+        }
+
+        .description {
+            font-size: 14px;
+        }
+
+        .contact-us {
+            background-color: #dd2a7b;
+            color: #000;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contact-us h1 {
+            background-color: #fff;
+            font-size: 36px;
+            align-items: center;
+        }
+
+        .contact-section {
+            padding: 20px;
+            max-width: 500px;
+            padding-top: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            justify-content: center;
+            color: #fff;
+        }
+
+        label {
+            font-weight: bold;
+            align-items: left;
+            padding-right: 400px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            padding-right: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d7126b;
+        }
+
+        footer p {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
         <div class="nav-left">
-            <p>ONE PIECE</p>
+            <P>ONE PIECE</P>
         </div>
-        <div class="nav-right" id="nav-right">
-            <ul><a href="#home">Home</a></ul>
-            <ul><a href="#about">About</a></ul>
-            <ul><a href="#services">Services</a> </ul>
-            <ul><a href="#products">Products</a> </ul>
-            <ul><a href="#contact">Contact</a></ul>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="nav-right">
+            <ul><a href="">Home</a></ul>
+            <ul><a href="">About</a></ul>
+            <ul><a href="">Services</a> </ul>
+            <ul><a href="">Products</a> </ul>
+            <ul><a href="">Contact</a></ul>
         </div>
     </header>
 
     <div class="container">
         <div class="left-section">
-            <h1>It's not just an anime <br> It's <span class="pink"> The Greatest-of-all </span></h1>
+            <h1>It's not just an anime <br> It's <span class="pink"> The Greatest-of-all </span>
+            </h1>
             <p>ONE PIECE is a Japanese manga series written and illustrated by Eiichiro Oda. It has been serialized in Shueisha's shōnen manga magazine Weekly Shōnen Jump since July 1997, with its individual chapters compiled into 106 tankōbon volumes as
-                of July 2023. The story follows the adventures of Monkey D. Luffy and his crew, the Straw Hat Pirates, where he explores the Grand Line in search of the mythical treasure known as the "One Piece" in order to become the next King of the
-                Pirates.
-            </p>
-            <a href="https://www.crunchyroll.com/one-piece"> Watch Now </a>
+                of July 2023. The story follows the adventures of Monkey D. Luffy and his crew, the Straw Hat Pirates, where he explores the Grand Line in search of the mythical treasure known as the "One Piece" in order to become the next King of the Pirates.</p>
+            <a href="#">Go!!</a>
         </div>
         <div class="right-section">
-            <img src="images/OIP (2).jpeg" alt="softy" class="icecream">
-            <div class="right-box">
-                <a href="https://www.facebook.com"> <img class="facebook" src="images/download (2).jpeg" alt="facebook"></a>
-                <a href="https://www.instagram.com"> <img src="images/OIP.jpeg" alt="instagram"></a>
-                <a href="https://www.twitter.com"> <img src="images/OIP (1).jpeg" alt="twitter"></a>
-            </div>
+            <img src="https://pngimg.com/d/one_piece_PNG55.png" alt="Monkey D. Luffy">
         </div>
     </div>
 
-    <div class="bottom">
-        <a href="#bottom"><img id="bottomimg" src="images/OIP (3).jpeg" onclick="imgSlider('images/OIP (3).jpeg')"></a>
-        <a href="#bottom"><img id="bottomimg" src="images/OIP (4).jpeg" onclick="imgSlider('images/OIP (4).jpeg')"></a>
-        <a href="#bottom"><img id="bottomimg" src="images/OIP (5).jpeg" onclick="imgSlider('images/OIP (5).jpeg')"></a>
-    </div>
+    <section class="bottom">
+        <a href=""><img src="https://pngimg.com/d/one_piece_PNG55.png" alt=""></a>
+        <a href=""><img src="https://pngimg.com/d/one_piece_PNG55.png" alt=""></a>
+        <a href=""><img src="https://pngimg.com/d/one_piece_PNG55.png" alt=""></a>
+        <a href=""><img src="https://pngimg.com/d/one_piece_PNG55.png" alt=""></a>
+    </section>
 
-    <div class="about" id="about">
-        <h1> About Us</h1>
+    <section class="about">
+        <h1> About ONE PIECE</h1>
         <div class="about-section">
             <div class="left-side">
-                <img src="images/OIP (5).jpeg" alt="image">
+                <img src="https://pngimg.com/d/one_piece_PNG55.png" alt="Monkey D. Luffy">
             </div>
             <div class="right-side">
-                <h2> Why Choose Us</h2>
-                <p> One Piece, created by Eiichiro Oda, has achieved unparalleled popularity due to its compelling storytelling, intricate world-building, and diverse, relatable characters. The series brilliantly combines adventure, friendship, and a sense
-                    of camaraderie, resonating with audiences of all ages. Oda's ability to craft intricate plotlines, filled with unexpected twists and emotional depth, keeps fans eagerly anticipating each chapter. Moreover, the themes of chasing dreams,
-                    facing challenges, and standing against injustice provide a universal appeal, fostering a strong connection between the audience and the characters. Ultimately, One Piece's enduring popularity can be attributed to its ability to capture
-                    the essence of human resilience, making it a timeless and beloved masterpiece in the world of manga and anime.</p>
-                <a href="#" id="learn-more"> Learn More</a>
+                <p>One Piece follows the adventures of Monkey D. Luffy, a boy whose body gained the properties of rubber after unintentionally eating a Devil Fruit. With his pirate crew, the Straw Hat Pirates, Luffy explores the Grand Line in search of the
+                    world's ultimate treasure known as "One Piece" in order to become the next Pirate King.</p>
+                <a href="#"> Read More </a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="services" id="services">
-        <h1> Our Services </h1>
+    <section class="services">
+        <h1> Our services</h1>
         <div class="service-section">
-            <div class="section">
-                <h2> Best Character Development </h2>
-                <p> Each Straw Hat has an important role to play and they make their crew stronger. Aside from the main crew. </p>
-                <img src="images/OIP (6).jpeg" alt="image">
-            </div>
-            <br>
-            <div class="section">
-                <h2> Exceptional world building </h2>
-                <p> The One Piece world is vast and endless. It’s made up of innumerable islands. Each Straw Hat is from a different island and once they enter the Grand Line.</p>
-                <img src="images/OIP(7).jpeg" alt="image">
-            </div>
-            <br>
-            <div class="section">
-                <h2> Amazing plot </h2>
-                <p> One Piece discusses poverty, political corruption, and racism through the Marines, Celestial Dragons, Royal Families, and Fishmen. </p>
-                <img src="images/OIP (3).jpeg" alt="image">
-            </div>
+            <img src="https://pngimg.com/d/one_piece_PNG55.png" alt="Monkey D. Luffy">
+            <img src="https://pngimg.com/d/one_piece_PNG55.png" alt="Monkey D. Luffy">
+            <img src="https://pngimg.com/d/one_piece_PNG55.png" alt="Monkey D. Luffy">
         </div>
-    </div>
+    </section>
 
-    <div class="our-products" id="products">
-        <h1> Our Arcs</h1>
+    <section class="our-products">
+        <h1> Our Products</h1>
         <div class="product-section">
             <div class="product">
-                <img src="images/OIP (7).jpeg" alt="EAST BLUE SAGA">
-                <h2>Arlong Park</h2>
-                <p class="price">
-                    <span class="original-price">Rs.600</span>
-                </p>
-                <p class="description">The crew follow her to an island under the control of the fish-man pirate Arlong.</p>
-            </div>
-            <div class="product">
-                <img src="images/OIP (8).jpeg" alt="ALABASTA SAGA">
-                <h2>Whiskey peak</h2>
-                <p class="price">
-                    <span class="original-price">Rs.649</span>
-                </p>
-                <p class="description">Led by the mysterious Mr. 9 and Ms. Wednesday, the crew go to Whisky Peak</p>
-            </div>
-            <div class="product">
-                <img src="images/OIP (9).jpeg" alt="SKY ISLAND SAGA">
-                <h2>Skypia</h2>
-                <p class="price">
-                    <span class="original-price">Rs.649</span>
-                </p>
-                <p class="description">Riding the Knock Up Stream, the crew finds themselves in the "White Sea".</p>
-            </div>
-            <div class="product">
-                <img src="images/OIP (10).jpeg" alt="WATER 7 SAGA">
-                <h2>Enies Lobby</h2>
-                <p class="price">
-                    <span class="original-price">Rs.459</span>
-                </p>
-                <p class="description">The Straw Hats, the Franky Family, and the Galley-La Company team up to rescue Nico Robin.</p>
-            </div>
-            <div class="product">
-                <img src="images/OIP (11).jpeg" alt="THRILLER BARK SAGA">
-                <h2>Thriller bark</h2>
-                <p class="price">
-                    <span class="original-price">Rs.539</span>
-                </p>
-                <p class="description">The Straw Hats continue their adventure out into the Florian Triangle.</p>
-            </div>
-            <div class="product">
-                <img src="images/OIP (12).jpeg" alt="SUMMIT WAR SAGA">
-                <h2>Marineford</h2>
-                <p class="price">
-                    <span class="original-price">Rs.449</span>
-                </p>
-                <p class="description">Unable to rescue Ace before he was transferred, Luffy follow after him to Marineford.</p>
+                <img src="https://pngimg.com/d/one_piece_PNG55.png" alt="Product Image">
+                <h2>Product Title</h2>
+                <p class="price"><span class="original-price">$25.00</span> <span class="discounted-price">$19.99</span></p>
+                <p class="description">This is the description of the product.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="contact-us" id="contact">
-        <h1>Contact Us</h1>
+    <section class="contact-us">
+        <h1> Contact us</h1>
         <div class="contact-section">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
-            <input type="submit" value="Submit">
+            <form>
+                <label for="name"> Name:</label>
+                <input type="text" id="name" placeholder="Enter Your Name">
+                <label for="email"> Email:</label>
+                <input type="email" id="email" placeholder="Enter Your Email">
+                <label for="message"> Message:</label>
+                <textarea id="message" rows="5" placeholder="Enter your message"></textarea>
+                <input type="submit" value="Send">
+            </form>
         </div>
-    </div>
+    </section>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Additional information about the One Piece story, characters, and world-building goes here.</p>
-        </div>
-    </div>
-
-    <script src="js/script.js"></script>
+    <footer>
+        <p> &copy; ONE PIECE</p>
+    </footer>
 </body>
 
 </html>
